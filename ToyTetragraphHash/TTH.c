@@ -182,7 +182,7 @@ int** createNumberBlock(char* block)
 }
 
 //rearrange block (round 2 step)
-rearrangeBlock(int** numBlock) {
+void rearrangeBlock(int** numBlock) {
 	//Rotate first row
 	int temp = numBlock[0][0];
 	numBlock[0][0] = numBlock[0][1];
