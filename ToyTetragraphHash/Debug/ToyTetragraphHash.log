@@ -1,3 +1,4 @@
 ﻿  TTH.c
-C:\Users\Vivek\source\repos\ToyTetragraphHash\ToyTetragraphHash\TTH.c(16,1): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Vivek\source\repos\ToyTetragraphHash\ToyTetragraphHash\TTH.c(80,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Vivek\source\repos\ToyTetragraphHash\ToyTetragraphHash\TTH.c(85,46): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
   ToyTetragraphHash.vcxproj -> C:\Users\Vivek\source\repos\ToyTetragraphHash\Debug\ToyTetragraphHash.exe
