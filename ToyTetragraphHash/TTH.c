@@ -99,6 +99,7 @@ void printBlocksOfMessage(char** blockArray)
 // Test the number block that is converted
 void printNumberBlock(int** numBlock)
 {
+	printf("\t");
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
@@ -111,7 +112,7 @@ void printNumberBlock(int** numBlock)
 
 //check Result
 void printVector(int round) {
-	printf("Result after Round %d: (%d,%d,%d,%d)\n",
+	printf("\tResult after Round %d: (%d,%d,%d,%d)\n",
 		round,
 		INITVECTOR[0],
 		INITVECTOR[1],
@@ -125,7 +126,6 @@ char** createBlockArray(char* message)
 	numberOfBlocks = computeNumberOfBlocks(message);
 	int endPointOfMessage = strlen(message) - 1;
 	int iterator = 0;
-	printf("Number of Blocks: %d\n", numberOfBlocks);
 
 	char** blockArray = (char**)malloc(numberOfBlocks * sizeof(char*));
 	for (int i = 0; i < numberOfBlocks; i++)
@@ -182,7 +182,7 @@ int** createNumberBlock(char* block)
 }
 
 //rearrange block (round 2 step)
-rearrangeBlock(int** numBlock) {
+void rearrangeBlock(int** numBlock) {
 	//Rotate first row
 	int temp = numBlock[0][0];
 	numBlock[0][0] = numBlock[0][1];
@@ -258,11 +258,10 @@ void convertToLetters() {
 void computeTTH(char* message)
 {
 	char** blocksOfMessage = createBlockArray(message);
-	printf("Value of F: %d\n", getHashedInteger('F'));
-	printf("Value of 2: %c\n", getHashedCharacter(2));
 	printBlocksOfMessage(blocksOfMessage);
 	for (int i = 0; i < numberOfBlocks; i++)
 	{
+		printf("Computation of block: %d\n",i);
 		compression(blocksOfMessage[i]);
 	}
 	convertToLetters();
@@ -283,7 +282,7 @@ void printFinalResult(char* message) {
 
 int main()
 {
-	char* message = "I leave twenty million dollars to my friendly cousin Bill.";
+	char* message = "I leave twenty million dollars to my friendly cousin Bill";
 	computeTTH(message);
 	printFinalResult(message);
 }
